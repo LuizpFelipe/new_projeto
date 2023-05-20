@@ -4,10 +4,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(HttpStatus.BAD_REQUEST)
-public class UnsuportedMathOperationException extends RuntimeException{
+public class ResouceNotFoundException extends RuntimeException{
 	private static final long serialVersionUID = 1L;	
 	
-	public  UnsuportedMathOperationException(String msg) {
+	public  ResouceNotFoundException(String msg) {
 		super(msg);
 	}
 
