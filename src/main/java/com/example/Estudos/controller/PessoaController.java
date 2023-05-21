@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.Estudos.bean.PessoaBean;
+import com.example.Estudos.dto.PessoaDTO;
 import com.example.Estudos.service.PessoaService;
 
 @RestController
@@ -25,20 +25,20 @@ public class PessoaController {
 	
 	
 	@GetMapping(value ="/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public PessoaBean findById(@PathVariable(value = "id") Long id){
+	public PessoaDTO findById(@PathVariable(value = "id") Long id){
 		return pessoaService.findById(id);
 	}
 	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-	public List<PessoaBean> findAll(){
+	public List<PessoaDTO> findAll(){
 		return pessoaService.findAll();
 	}
 	
 	@PostMapping(value ="/", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public PessoaBean create(@RequestBody PessoaBean pessoa){
+	public PessoaDTO create(@RequestBody PessoaDTO pessoa){
 		return pessoaService.createPessoa(pessoa);
 	}
 	@PutMapping(value ="/", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public PessoaBean update(@RequestBody PessoaBean pessoa){
+	public PessoaDTO update(@RequestBody PessoaDTO pessoa){
 		return pessoaService.updatePessoa(pessoa);
 	}
 	
